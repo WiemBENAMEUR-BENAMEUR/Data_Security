@@ -20,7 +20,7 @@ services:
     ports:
       - "3305:3306"
 
-      
+
   sonarqube:
     image: sonarqube:lts
     ports:
@@ -30,6 +30,23 @@ services:
     volumes:
       - sonarqube_data:/opt/sonarqube/data
       - sonarqube_extensions:/opt/sonarqube/extensions
+
+  zap:
+    image: ghcr.io/zaproxy/zaproxy:stable
+    container_name: zap
+    ports:
+      - "8090:8090"
+      - "8080:8080"
+    command:
+      [
+        "zap.sh",
+        "-daemon",
+        "-host", "0.0.0.0",
+        "-port", "8090",
+        "-config", "api.disablekey=true",
+        "-config", "api.addrs.addr.name=.*",
+        "-config", "api.addrs.addr.regex=true"
+      ]
 
 volumes:
   sonarqube_data:
