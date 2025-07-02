@@ -1,0 +1,961 @@
+Alert ID: 0
+Alert Name: Session Management Response Identified
+Risk Level: Informational
+Confidence: High
+URL: http://host.docker.internal:5000/user/signup
+Method: GET
+Parameter: session
+Evidence: session
+Description: The given response has been identified as containing a session management token. The 'Other Info' field contains a set of header tokens that can be used in the Header Based Session Management Method. If the request is in a context which has a Session Management Method set to "Auto-Detect" then this rule will change the session management to use the tokens identified.
+Solution: This is an informational alert rather than a vulnerability and so there is nothing to fix.
+--------------------------------------------------
+Alert ID: 3
+Alert Name: Session Management Response Identified
+Risk Level: Informational
+Confidence: Medium
+URL: http://host.docker.internal:5000/user/signup
+Method: POST
+Parameter: session
+Evidence: session
+Description: The given response has been identified as containing a session management token. The 'Other Info' field contains a set of header tokens that can be used in the Header Based Session Management Method. If the request is in a context which has a Session Management Method set to "Auto-Detect" then this rule will change the session management to use the tokens identified.
+Solution: This is an informational alert rather than a vulnerability and so there is nothing to fix.
+--------------------------------------------------
+Alert ID: 4
+Alert Name: Authentication Request Identified
+Risk Level: Informational
+Confidence: Low
+URL: http://host.docker.internal:5000/
+Method: POST
+Parameter: username
+Evidence: password
+Description: The given request has been identified as an authentication request. The 'Other Info' field contains a set of key=value lines which identify any relevant fields. If the request is in a context which has an Authentication Method set to "Auto-Detect" then this rule will change the authentication to match the request identified.
+Solution: This is an informational alert rather than a vulnerability and so there is nothing to fix.
+--------------------------------------------------
+Alert ID: 6
+Alert Name: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://host.docker.internal:5000/robots.txt
+Method: GET
+Parameter: 
+Evidence: 
+Description: Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page — covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.
+Solution: Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.
+--------------------------------------------------
+Alert ID: 7
+Alert Name: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://host.docker.internal:5000/user/index.html
+Method: GET
+Parameter: 
+Evidence: 
+Description: Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page — covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.
+Solution: Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.
+--------------------------------------------------
+Alert ID: 8
+Alert Name: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://host.docker.internal:5000/sitemap.xml
+Method: GET
+Parameter: 
+Evidence: 
+Description: Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page — covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.
+Solution: Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.
+--------------------------------------------------
+Alert ID: 9
+Alert Name: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://host.docker.internal:5000/index.html
+Method: GET
+Parameter: 
+Evidence: 
+Description: Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page — covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.
+Solution: Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.
+--------------------------------------------------
+Alert ID: 10
+Alert Name: Big Redirect Detected (Potential Sensitive Information Leak)
+Risk Level: Low
+Confidence: Medium
+URL: http://host.docker.internal:5000/
+Method: POST
+Parameter: 
+Evidence: 
+Description: The server has responded with a redirect that seems to provide a large response. This may indicate that although the server sent a redirect it also responded with body content (which may include sensitive details, PII, etc.).
+Solution: Ensure that no sensitive information is leaked via redirect responses. Redirect responses should have almost no content.
+--------------------------------------------------
+Alert ID: 11
+Alert Name: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://host.docker.internal:5000/user/signup
+Method: GET
+Parameter: x-frame-options
+Evidence: 
+Description: The response does not protect against 'ClickJacking' attacks. It should include either Content-Security-Policy with 'frame-ancestors' directive or X-Frame-Options.
+Solution: Modern Web browsers support the Content-Security-Policy and X-Frame-Options HTTP headers. Ensure one of them is set on all web pages returned by your site/app.
+If you expect the page to be framed only by pages on your server (e.g. it's part of a FRAMESET) then you'll want to use SAMEORIGIN, otherwise if you never expect the page to be framed, you should use DENY. Alternatively consider implementing Content Security Policy's "frame-ancestors" directive.
+--------------------------------------------------
+Alert ID: 12
+Alert Name: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://host.docker.internal:5000
+Method: GET
+Parameter: x-frame-options
+Evidence: 
+Description: The response does not protect against 'ClickJacking' attacks. It should include either Content-Security-Policy with 'frame-ancestors' directive or X-Frame-Options.
+Solution: Modern Web browsers support the Content-Security-Policy and X-Frame-Options HTTP headers. Ensure one of them is set on all web pages returned by your site/app.
+If you expect the page to be framed only by pages on your server (e.g. it's part of a FRAMESET) then you'll want to use SAMEORIGIN, otherwise if you never expect the page to be framed, you should use DENY. Alternatively consider implementing Content Security Policy's "frame-ancestors" directive.
+--------------------------------------------------
+Alert ID: 13
+Alert Name: Cookie without SameSite Attribute
+Risk Level: Low
+Confidence: Medium
+URL: http://host.docker.internal:5000/user/signup
+Method: POST
+Parameter: session
+Evidence: Set-Cookie: session
+Description: A cookie has been set without the SameSite attribute, which means that the cookie can be sent as a result of a 'cross-site' request. The SameSite attribute is an effective counter measure to cross-site request forgery, cross-site script inclusion, and timing attacks.
+Solution: Ensure that the SameSite attribute is set to either 'lax' or ideally 'strict' for all cookies.
+--------------------------------------------------
+Alert ID: 15
+Alert Name: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://host.docker.internal:5000/
+Method: GET
+Parameter: x-frame-options
+Evidence: 
+Description: The response does not protect against 'ClickJacking' attacks. It should include either Content-Security-Policy with 'frame-ancestors' directive or X-Frame-Options.
+Solution: Modern Web browsers support the Content-Security-Policy and X-Frame-Options HTTP headers. Ensure one of them is set on all web pages returned by your site/app.
+If you expect the page to be framed only by pages on your server (e.g. it's part of a FRAMESET) then you'll want to use SAMEORIGIN, otherwise if you never expect the page to be framed, you should use DENY. Alternatively consider implementing Content Security Policy's "frame-ancestors" directive.
+--------------------------------------------------
+Alert ID: 16
+Alert Name: Information Disclosure - Sensitive Information in URL
+Risk Level: Informational
+Confidence: Medium
+URL: http://host.docker.internal:5000/student?user=%7B'id':+27169715,+'username':+'ZAP',+'password':+'ZAP',+'role':+'Select+Role%5Cn'%7D
+Method: GET
+Parameter: user
+Evidence: user
+Description: The request appeared to contain sensitive information leaked in the URL. This can violate PCI and most organizational compliance policies. You can configure the list of strings for this check to add or remove values specific to your environment.
+Solution: Do not pass sensitive information in URIs.
+--------------------------------------------------
+Alert ID: 17
+Alert Name: Missing Anti-clickjacking Header
+Risk Level: Medium
+Confidence: Medium
+URL: http://host.docker.internal:5000/signup
+Method: GET
+Parameter: x-frame-options
+Evidence: 
+Description: The response does not protect against 'ClickJacking' attacks. It should include either Content-Security-Policy with 'frame-ancestors' directive or X-Frame-Options.
+Solution: Modern Web browsers support the Content-Security-Policy and X-Frame-Options HTTP headers. Ensure one of them is set on all web pages returned by your site/app.
+If you expect the page to be framed only by pages on your server (e.g. it's part of a FRAMESET) then you'll want to use SAMEORIGIN, otherwise if you never expect the page to be framed, you should use DENY. Alternatively consider implementing Content Security Policy's "frame-ancestors" directive.
+--------------------------------------------------
+Alert ID: 18
+Alert Name: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://host.docker.internal:5000/static/assets/css/lib/themify-icons.css
+Method: GET
+Parameter: 
+Evidence: Werkzeug/3.1.3 Python/3.10.18
+Description: The web/application server is leaking version information via the "Server" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.
+Solution: Ensure that your web server, application server, load balancer, etc. is configured to suppress the "Server" header or provide generic details.
+--------------------------------------------------
+Alert ID: 19
+Alert Name: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://host.docker.internal:5000/user/index.html
+Method: GET
+Parameter: 
+Evidence: Werkzeug/3.1.3 Python/3.10.18
+Description: The web/application server is leaking version information via the "Server" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.
+Solution: Ensure that your web server, application server, load balancer, etc. is configured to suppress the "Server" header or provide generic details.
+--------------------------------------------------
+Alert ID: 20
+Alert Name: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://host.docker.internal:5000/robots.txt
+Method: GET
+Parameter: 
+Evidence: Werkzeug/3.1.3 Python/3.10.18
+Description: The web/application server is leaking version information via the "Server" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.
+Solution: Ensure that your web server, application server, load balancer, etc. is configured to suppress the "Server" header or provide generic details.
+--------------------------------------------------
+Alert ID: 21
+Alert Name: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://host.docker.internal:5000/sitemap.xml
+Method: GET
+Parameter: 
+Evidence: Werkzeug/3.1.3 Python/3.10.18
+Description: The web/application server is leaking version information via the "Server" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.
+Solution: Ensure that your web server, application server, load balancer, etc. is configured to suppress the "Server" header or provide generic details.
+--------------------------------------------------
+Alert ID: 22
+Alert Name: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://host.docker.internal:5000/student?user=%7B'id':+27169715,+'username':+'ZAP',+'password':+'ZAP',+'role':+'Select+Role%5Cn'%7D
+Method: GET
+Parameter: 
+Evidence: Werkzeug/3.1.3 Python/3.10.18
+Description: The web/application server is leaking version information via the "Server" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.
+Solution: Ensure that your web server, application server, load balancer, etc. is configured to suppress the "Server" header or provide generic details.
+--------------------------------------------------
+Alert ID: 23
+Alert Name: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://host.docker.internal:5000/index.html
+Method: GET
+Parameter: 
+Evidence: Werkzeug/3.1.3 Python/3.10.18
+Description: The web/application server is leaking version information via the "Server" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.
+Solution: Ensure that your web server, application server, load balancer, etc. is configured to suppress the "Server" header or provide generic details.
+--------------------------------------------------
+Alert ID: 24
+Alert Name: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://host.docker.internal:5000/user/signup
+Method: POST
+Parameter: 
+Evidence: Werkzeug/3.1.3 Python/3.10.18
+Description: The web/application server is leaking version information via the "Server" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.
+Solution: Ensure that your web server, application server, load balancer, etc. is configured to suppress the "Server" header or provide generic details.
+--------------------------------------------------
+Alert ID: 25
+Alert Name: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://host.docker.internal:5000/
+Method: POST
+Parameter: 
+Evidence: Werkzeug/3.1.3 Python/3.10.18
+Description: The web/application server is leaking version information via the "Server" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.
+Solution: Ensure that your web server, application server, load balancer, etc. is configured to suppress the "Server" header or provide generic details.
+--------------------------------------------------
+Alert ID: 26
+Alert Name: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://host.docker.internal:5000
+Method: GET
+Parameter: 
+Evidence: 
+Description: Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page — covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.
+Solution: Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.
+--------------------------------------------------
+Alert ID: 27
+Alert Name: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://host.docker.internal:5000/static/assets/css/lib/font-awesome.min.css
+Method: GET
+Parameter: 
+Evidence: Werkzeug/3.1.3 Python/3.10.18
+Description: The web/application server is leaking version information via the "Server" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.
+Solution: Ensure that your web server, application server, load balancer, etc. is configured to suppress the "Server" header or provide generic details.
+--------------------------------------------------
+Alert ID: 28
+Alert Name: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://host.docker.internal:5000/user/signup
+Method: GET
+Parameter: 
+Evidence: 
+Description: Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page — covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.
+Solution: Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.
+--------------------------------------------------
+Alert ID: 29
+Alert Name: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://host.docker.internal:5000/
+Method: GET
+Parameter: 
+Evidence: 
+Description: Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page — covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.
+Solution: Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.
+--------------------------------------------------
+Alert ID: 30
+Alert Name: Content Security Policy (CSP) Header Not Set
+Risk Level: Medium
+Confidence: High
+URL: http://host.docker.internal:5000/signup
+Method: GET
+Parameter: 
+Evidence: 
+Description: Content Security Policy (CSP) is an added layer of security that helps to detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks. These attacks are used for everything from data theft to site defacement or distribution of malware. CSP provides a set of standard HTTP headers that allow website owners to declare approved sources of content that browsers should be allowed to load on that page — covered types are JavaScript, CSS, HTML frames, fonts, images and embeddable objects such as Java applets, ActiveX, audio and video files.
+Solution: Ensure that your web server, application server, load balancer, etc. is configured to set the Content-Security-Policy header.
+--------------------------------------------------
+Alert ID: 31
+Alert Name: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://host.docker.internal:5000/
+Method: GET
+Parameter: 
+Evidence: <form method="POST" action="">
+Description: No Anti-CSRF tokens were found in a HTML submission form.
+A cross-site request forgery is an attack that involves forcing a victim to send an HTTP request to a target destination without their knowledge or intent in order to perform an action as the victim. The underlying cause is application functionality using predictable URL/form actions in a repeatable way. The nature of the attack is that CSRF exploits the trust that a web site has for a user. By contrast, cross-site scripting (XSS) exploits the trust that a user has for a web site. Like XSS, CSRF attacks are not necessarily cross-site, but they can be. Cross-site request forgery is also known as CSRF, XSRF, one-click attack, session riding, confused deputy, and sea surf.
+
+CSRF attacks are effective in a number of situations, including:
+    * The victim has an active session on the target site.
+    * The victim is authenticated via HTTP auth on the target site.
+    * The victim is on the same local network as the target site.
+
+CSRF has primarily been used to perform an action against a target site using the victim's privileges, but recent techniques have been discovered to disclose information by gaining access to the response. The risk of information disclosure is dramatically increased when the target site is vulnerable to XSS, because XSS can be used as a platform for CSRF, allowing the attack to operate within the bounds of the same-origin policy.
+Solution: Phase: Architecture and Design
+Use a vetted library or framework that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid.
+For example, use anti-CSRF packages such as the OWASP CSRFGuard.
+
+Phase: Implementation
+Ensure that your application is free of cross-site scripting issues, because most CSRF defenses can be bypassed using attacker-controlled script.
+
+Phase: Architecture and Design
+Generate a unique nonce for each form, place the nonce into the form, and verify the nonce upon receipt of the form. Be sure that the nonce is not predictable (CWE-330).
+Note that this can be bypassed using XSS.
+
+Identify especially dangerous operations. When the user performs a dangerous operation, send a separate confirmation request to ensure that the user intended to perform that operation.
+Note that this can be bypassed using XSS.
+
+Use the ESAPI Session Management control.
+This control includes a component for CSRF.
+
+Do not use the GET method for any request that triggers a state change.
+
+Phase: Implementation
+Check the HTTP Referer header to see if the request originated from an expected page. This could break legitimate functionality, because users or proxies may have disabled sending the Referer for privacy reasons.
+--------------------------------------------------
+Alert ID: 33
+Alert Name: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://host.docker.internal:5000/static/assets/css/lib/unix.css
+Method: GET
+Parameter: 
+Evidence: Werkzeug/3.1.3 Python/3.10.18
+Description: The web/application server is leaking version information via the "Server" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.
+Solution: Ensure that your web server, application server, load balancer, etc. is configured to suppress the "Server" header or provide generic details.
+--------------------------------------------------
+Alert ID: 34
+Alert Name: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://host.docker.internal:5000/static/assets/css/lib/themify-icons.css
+Method: GET
+Parameter: x-content-type-options
+Evidence: 
+Description: The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.
+Solution: Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.
+If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.
+--------------------------------------------------
+Alert ID: 35
+Alert Name: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://host.docker.internal:5000
+Method: GET
+Parameter: 
+Evidence: <form method="POST" action="">
+Description: No Anti-CSRF tokens were found in a HTML submission form.
+A cross-site request forgery is an attack that involves forcing a victim to send an HTTP request to a target destination without their knowledge or intent in order to perform an action as the victim. The underlying cause is application functionality using predictable URL/form actions in a repeatable way. The nature of the attack is that CSRF exploits the trust that a web site has for a user. By contrast, cross-site scripting (XSS) exploits the trust that a user has for a web site. Like XSS, CSRF attacks are not necessarily cross-site, but they can be. Cross-site request forgery is also known as CSRF, XSRF, one-click attack, session riding, confused deputy, and sea surf.
+
+CSRF attacks are effective in a number of situations, including:
+    * The victim has an active session on the target site.
+    * The victim is authenticated via HTTP auth on the target site.
+    * The victim is on the same local network as the target site.
+
+CSRF has primarily been used to perform an action against a target site using the victim's privileges, but recent techniques have been discovered to disclose information by gaining access to the response. The risk of information disclosure is dramatically increased when the target site is vulnerable to XSS, because XSS can be used as a platform for CSRF, allowing the attack to operate within the bounds of the same-origin policy.
+Solution: Phase: Architecture and Design
+Use a vetted library or framework that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid.
+For example, use anti-CSRF packages such as the OWASP CSRFGuard.
+
+Phase: Implementation
+Ensure that your application is free of cross-site scripting issues, because most CSRF defenses can be bypassed using attacker-controlled script.
+
+Phase: Architecture and Design
+Generate a unique nonce for each form, place the nonce into the form, and verify the nonce upon receipt of the form. Be sure that the nonce is not predictable (CWE-330).
+Note that this can be bypassed using XSS.
+
+Identify especially dangerous operations. When the user performs a dangerous operation, send a separate confirmation request to ensure that the user intended to perform that operation.
+Note that this can be bypassed using XSS.
+
+Use the ESAPI Session Management control.
+This control includes a component for CSRF.
+
+Do not use the GET method for any request that triggers a state change.
+
+Phase: Implementation
+Check the HTTP Referer header to see if the request originated from an expected page. This could break legitimate functionality, because users or proxies may have disabled sending the Referer for privacy reasons.
+--------------------------------------------------
+Alert ID: 36
+Alert Name: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://host.docker.internal:5000/static/assets/css/lib/font-awesome.min.css
+Method: GET
+Parameter: x-content-type-options
+Evidence: 
+Description: The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.
+Solution: Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.
+If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.
+--------------------------------------------------
+Alert ID: 37
+Alert Name: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://host.docker.internal:5000/static/assets/css/style.css
+Method: GET
+Parameter: 
+Evidence: Werkzeug/3.1.3 Python/3.10.18
+Description: The web/application server is leaking version information via the "Server" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.
+Solution: Ensure that your web server, application server, load balancer, etc. is configured to suppress the "Server" header or provide generic details.
+--------------------------------------------------
+Alert ID: 38
+Alert Name: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://host.docker.internal:5000/user/signup
+Method: GET
+Parameter: 
+Evidence: <form method="POST" action="">
+Description: No Anti-CSRF tokens were found in a HTML submission form.
+A cross-site request forgery is an attack that involves forcing a victim to send an HTTP request to a target destination without their knowledge or intent in order to perform an action as the victim. The underlying cause is application functionality using predictable URL/form actions in a repeatable way. The nature of the attack is that CSRF exploits the trust that a web site has for a user. By contrast, cross-site scripting (XSS) exploits the trust that a user has for a web site. Like XSS, CSRF attacks are not necessarily cross-site, but they can be. Cross-site request forgery is also known as CSRF, XSRF, one-click attack, session riding, confused deputy, and sea surf.
+
+CSRF attacks are effective in a number of situations, including:
+    * The victim has an active session on the target site.
+    * The victim is authenticated via HTTP auth on the target site.
+    * The victim is on the same local network as the target site.
+
+CSRF has primarily been used to perform an action against a target site using the victim's privileges, but recent techniques have been discovered to disclose information by gaining access to the response. The risk of information disclosure is dramatically increased when the target site is vulnerable to XSS, because XSS can be used as a platform for CSRF, allowing the attack to operate within the bounds of the same-origin policy.
+Solution: Phase: Architecture and Design
+Use a vetted library or framework that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid.
+For example, use anti-CSRF packages such as the OWASP CSRFGuard.
+
+Phase: Implementation
+Ensure that your application is free of cross-site scripting issues, because most CSRF defenses can be bypassed using attacker-controlled script.
+
+Phase: Architecture and Design
+Generate a unique nonce for each form, place the nonce into the form, and verify the nonce upon receipt of the form. Be sure that the nonce is not predictable (CWE-330).
+Note that this can be bypassed using XSS.
+
+Identify especially dangerous operations. When the user performs a dangerous operation, send a separate confirmation request to ensure that the user intended to perform that operation.
+Note that this can be bypassed using XSS.
+
+Use the ESAPI Session Management control.
+This control includes a component for CSRF.
+
+Do not use the GET method for any request that triggers a state change.
+
+Phase: Implementation
+Check the HTTP Referer header to see if the request originated from an expected page. This could break legitimate functionality, because users or proxies may have disabled sending the Referer for privacy reasons.
+--------------------------------------------------
+Alert ID: 39
+Alert Name: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://host.docker.internal:5000/static/assets/css/lib/bootstrap.min.css
+Method: GET
+Parameter: 
+Evidence: Werkzeug/3.1.3 Python/3.10.18
+Description: The web/application server is leaking version information via the "Server" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.
+Solution: Ensure that your web server, application server, load balancer, etc. is configured to suppress the "Server" header or provide generic details.
+--------------------------------------------------
+Alert ID: 40
+Alert Name: Absence of Anti-CSRF Tokens
+Risk Level: Medium
+Confidence: Low
+URL: http://host.docker.internal:5000/signup
+Method: GET
+Parameter: 
+Evidence: <form method="POST" action="/user/signup">
+Description: No Anti-CSRF tokens were found in a HTML submission form.
+A cross-site request forgery is an attack that involves forcing a victim to send an HTTP request to a target destination without their knowledge or intent in order to perform an action as the victim. The underlying cause is application functionality using predictable URL/form actions in a repeatable way. The nature of the attack is that CSRF exploits the trust that a web site has for a user. By contrast, cross-site scripting (XSS) exploits the trust that a user has for a web site. Like XSS, CSRF attacks are not necessarily cross-site, but they can be. Cross-site request forgery is also known as CSRF, XSRF, one-click attack, session riding, confused deputy, and sea surf.
+
+CSRF attacks are effective in a number of situations, including:
+    * The victim has an active session on the target site.
+    * The victim is authenticated via HTTP auth on the target site.
+    * The victim is on the same local network as the target site.
+
+CSRF has primarily been used to perform an action against a target site using the victim's privileges, but recent techniques have been discovered to disclose information by gaining access to the response. The risk of information disclosure is dramatically increased when the target site is vulnerable to XSS, because XSS can be used as a platform for CSRF, allowing the attack to operate within the bounds of the same-origin policy.
+Solution: Phase: Architecture and Design
+Use a vetted library or framework that does not allow this weakness to occur or provides constructs that make this weakness easier to avoid.
+For example, use anti-CSRF packages such as the OWASP CSRFGuard.
+
+Phase: Implementation
+Ensure that your application is free of cross-site scripting issues, because most CSRF defenses can be bypassed using attacker-controlled script.
+
+Phase: Architecture and Design
+Generate a unique nonce for each form, place the nonce into the form, and verify the nonce upon receipt of the form. Be sure that the nonce is not predictable (CWE-330).
+Note that this can be bypassed using XSS.
+
+Identify especially dangerous operations. When the user performs a dangerous operation, send a separate confirmation request to ensure that the user intended to perform that operation.
+Note that this can be bypassed using XSS.
+
+Use the ESAPI Session Management control.
+This control includes a component for CSRF.
+
+Do not use the GET method for any request that triggers a state change.
+
+Phase: Implementation
+Check the HTTP Referer header to see if the request originated from an expected page. This could break legitimate functionality, because users or proxies may have disabled sending the Referer for privacy reasons.
+--------------------------------------------------
+Alert ID: 41
+Alert Name: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://host.docker.internal:5000/
+Method: GET
+Parameter: 
+Evidence: Werkzeug/3.1.3 Python/3.10.18
+Description: The web/application server is leaking version information via the "Server" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.
+Solution: Ensure that your web server, application server, load balancer, etc. is configured to suppress the "Server" header or provide generic details.
+--------------------------------------------------
+Alert ID: 42
+Alert Name: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://host.docker.internal:5000/static/assets/css/lib/unix.css
+Method: GET
+Parameter: x-content-type-options
+Evidence: 
+Description: The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.
+Solution: Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.
+If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.
+--------------------------------------------------
+Alert ID: 43
+Alert Name: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://host.docker.internal:5000
+Method: GET
+Parameter: 
+Evidence: Werkzeug/3.1.3 Python/3.10.18
+Description: The web/application server is leaking version information via the "Server" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.
+Solution: Ensure that your web server, application server, load balancer, etc. is configured to suppress the "Server" header or provide generic details.
+--------------------------------------------------
+Alert ID: 44
+Alert Name: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://host.docker.internal:5000/user/signup
+Method: GET
+Parameter: 
+Evidence: Werkzeug/3.1.3 Python/3.10.18
+Description: The web/application server is leaking version information via the "Server" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.
+Solution: Ensure that your web server, application server, load balancer, etc. is configured to suppress the "Server" header or provide generic details.
+--------------------------------------------------
+Alert ID: 45
+Alert Name: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://host.docker.internal:5000/static/assets/css/lib/bootstrap.min.css
+Method: GET
+Parameter: x-content-type-options
+Evidence: 
+Description: The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.
+Solution: Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.
+If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.
+--------------------------------------------------
+Alert ID: 46
+Alert Name: Modern Web Application
+Risk Level: Informational
+Confidence: Medium
+URL: http://host.docker.internal:5000/signup
+Method: GET
+Parameter: 
+Evidence: <a href="#"><span>Signup</span></a>
+Description: The application appears to be a modern web application. If you need to explore it automatically then the Ajax Spider may well be more effective than the standard one.
+Solution: This is an informational alert and so no changes are required.
+--------------------------------------------------
+Alert ID: 47
+Alert Name: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://host.docker.internal:5000/static/assets/css/style.css
+Method: GET
+Parameter: x-content-type-options
+Evidence: 
+Description: The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.
+Solution: Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.
+If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.
+--------------------------------------------------
+Alert ID: 48
+Alert Name: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://host.docker.internal:5000/
+Method: GET
+Parameter: x-content-type-options
+Evidence: 
+Description: The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.
+Solution: Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.
+If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.
+--------------------------------------------------
+Alert ID: 49
+Alert Name: Server Leaks Version Information via "Server" HTTP Response Header Field
+Risk Level: Low
+Confidence: High
+URL: http://host.docker.internal:5000/signup
+Method: GET
+Parameter: 
+Evidence: Werkzeug/3.1.3 Python/3.10.18
+Description: The web/application server is leaking version information via the "Server" HTTP response header. Access to such information may facilitate attackers identifying other vulnerabilities your web/application server is subject to.
+Solution: Ensure that your web server, application server, load balancer, etc. is configured to suppress the "Server" header or provide generic details.
+--------------------------------------------------
+Alert ID: 50
+Alert Name: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://host.docker.internal:5000
+Method: GET
+Parameter: x-content-type-options
+Evidence: 
+Description: The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.
+Solution: Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.
+If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.
+--------------------------------------------------
+Alert ID: 51
+Alert Name: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://host.docker.internal:5000/signup
+Method: GET
+Parameter: x-content-type-options
+Evidence: 
+Description: The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.
+Solution: Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.
+If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.
+--------------------------------------------------
+Alert ID: 52
+Alert Name: X-Content-Type-Options Header Missing
+Risk Level: Low
+Confidence: Medium
+URL: http://host.docker.internal:5000/user/signup
+Method: GET
+Parameter: x-content-type-options
+Evidence: 
+Description: The Anti-MIME-Sniffing header X-Content-Type-Options was not set to 'nosniff'. This allows older versions of Internet Explorer and Chrome to perform MIME-sniffing on the response body, potentially causing the response body to be interpreted and displayed as a content type other than the declared content type. Current (early 2014) and legacy versions of Firefox will use the declared content type (if one is set), rather than performing MIME-sniffing.
+Solution: Ensure that the application/web server sets the Content-Type header appropriately, and that it sets the X-Content-Type-Options header to 'nosniff' for all web pages.
+If possible, ensure that the end user uses a standards-compliant and modern web browser that does not perform MIME-sniffing at all, or that can be directed by the web application/web server to not perform MIME-sniffing.
+--------------------------------------------------
+Alert ID: 53
+Alert Name: GET for POST
+Risk Level: Informational
+Confidence: High
+URL: http://host.docker.internal:5000/
+Method: GET
+Parameter: 
+Evidence: GET http://host.docker.internal:5000/?password=ZAP&username=ZAP HTTP/1.1
+Description: A request that was originally observed as a POST was also accepted as a GET. This issue does not represent a security weakness unto itself, however, it may facilitate simplification of other attacks. For example if the original POST is subject to Cross-Site Scripting (XSS), then this finding may indicate that a simplified (GET based) XSS may also be possible.
+Solution: Ensure that only POST is accepted where POST is expected.
+--------------------------------------------------
+Alert ID: 54
+Alert Name: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://host.docker.internal:5000
+Method: GET
+Parameter: Header User-Agent
+Evidence: 
+Description: Check for differences in response based on fuzzed User Agent (eg. mobile sites, access as a Search Engine Crawler). Compares the response statuscode and the hashcode of the response body with the original response.
+Solution: 
+--------------------------------------------------
+Alert ID: 55
+Alert Name: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://host.docker.internal:5000/
+Method: POST
+Parameter: Header User-Agent
+Evidence: 
+Description: Check for differences in response based on fuzzed User Agent (eg. mobile sites, access as a Search Engine Crawler). Compares the response statuscode and the hashcode of the response body with the original response.
+Solution: 
+--------------------------------------------------
+Alert ID: 56
+Alert Name: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://host.docker.internal:5000/
+Method: GET
+Parameter: Header User-Agent
+Evidence: 
+Description: Check for differences in response based on fuzzed User Agent (eg. mobile sites, access as a Search Engine Crawler). Compares the response statuscode and the hashcode of the response body with the original response.
+Solution: 
+--------------------------------------------------
+Alert ID: 57
+Alert Name: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://host.docker.internal:5000
+Method: GET
+Parameter: Header User-Agent
+Evidence: 
+Description: Check for differences in response based on fuzzed User Agent (eg. mobile sites, access as a Search Engine Crawler). Compares the response statuscode and the hashcode of the response body with the original response.
+Solution: 
+--------------------------------------------------
+Alert ID: 58
+Alert Name: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://host.docker.internal:5000/
+Method: POST
+Parameter: Header User-Agent
+Evidence: 
+Description: Check for differences in response based on fuzzed User Agent (eg. mobile sites, access as a Search Engine Crawler). Compares the response statuscode and the hashcode of the response body with the original response.
+Solution: 
+--------------------------------------------------
+Alert ID: 59
+Alert Name: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://host.docker.internal:5000/
+Method: GET
+Parameter: Header User-Agent
+Evidence: 
+Description: Check for differences in response based on fuzzed User Agent (eg. mobile sites, access as a Search Engine Crawler). Compares the response statuscode and the hashcode of the response body with the original response.
+Solution: 
+--------------------------------------------------
+Alert ID: 60
+Alert Name: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://host.docker.internal:5000
+Method: GET
+Parameter: Header User-Agent
+Evidence: 
+Description: Check for differences in response based on fuzzed User Agent (eg. mobile sites, access as a Search Engine Crawler). Compares the response statuscode and the hashcode of the response body with the original response.
+Solution: 
+--------------------------------------------------
+Alert ID: 61
+Alert Name: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://host.docker.internal:5000/
+Method: GET
+Parameter: Header User-Agent
+Evidence: 
+Description: Check for differences in response based on fuzzed User Agent (eg. mobile sites, access as a Search Engine Crawler). Compares the response statuscode and the hashcode of the response body with the original response.
+Solution: 
+--------------------------------------------------
+Alert ID: 62
+Alert Name: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://host.docker.internal:5000/
+Method: POST
+Parameter: Header User-Agent
+Evidence: 
+Description: Check for differences in response based on fuzzed User Agent (eg. mobile sites, access as a Search Engine Crawler). Compares the response statuscode and the hashcode of the response body with the original response.
+Solution: 
+--------------------------------------------------
+Alert ID: 63
+Alert Name: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://host.docker.internal:5000
+Method: GET
+Parameter: Header User-Agent
+Evidence: 
+Description: Check for differences in response based on fuzzed User Agent (eg. mobile sites, access as a Search Engine Crawler). Compares the response statuscode and the hashcode of the response body with the original response.
+Solution: 
+--------------------------------------------------
+Alert ID: 64
+Alert Name: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://host.docker.internal:5000/
+Method: POST
+Parameter: Header User-Agent
+Evidence: 
+Description: Check for differences in response based on fuzzed User Agent (eg. mobile sites, access as a Search Engine Crawler). Compares the response statuscode and the hashcode of the response body with the original response.
+Solution: 
+--------------------------------------------------
+Alert ID: 65
+Alert Name: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://host.docker.internal:5000/
+Method: GET
+Parameter: Header User-Agent
+Evidence: 
+Description: Check for differences in response based on fuzzed User Agent (eg. mobile sites, access as a Search Engine Crawler). Compares the response statuscode and the hashcode of the response body with the original response.
+Solution: 
+--------------------------------------------------
+Alert ID: 66
+Alert Name: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://host.docker.internal:5000
+Method: GET
+Parameter: Header User-Agent
+Evidence: 
+Description: Check for differences in response based on fuzzed User Agent (eg. mobile sites, access as a Search Engine Crawler). Compares the response statuscode and the hashcode of the response body with the original response.
+Solution: 
+--------------------------------------------------
+Alert ID: 67
+Alert Name: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://host.docker.internal:5000/
+Method: POST
+Parameter: Header User-Agent
+Evidence: 
+Description: Check for differences in response based on fuzzed User Agent (eg. mobile sites, access as a Search Engine Crawler). Compares the response statuscode and the hashcode of the response body with the original response.
+Solution: 
+--------------------------------------------------
+Alert ID: 68
+Alert Name: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://host.docker.internal:5000/
+Method: GET
+Parameter: Header User-Agent
+Evidence: 
+Description: Check for differences in response based on fuzzed User Agent (eg. mobile sites, access as a Search Engine Crawler). Compares the response statuscode and the hashcode of the response body with the original response.
+Solution: 
+--------------------------------------------------
+Alert ID: 69
+Alert Name: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://host.docker.internal:5000
+Method: GET
+Parameter: Header User-Agent
+Evidence: 
+Description: Check for differences in response based on fuzzed User Agent (eg. mobile sites, access as a Search Engine Crawler). Compares the response statuscode and the hashcode of the response body with the original response.
+Solution: 
+--------------------------------------------------
+Alert ID: 70
+Alert Name: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://host.docker.internal:5000/
+Method: POST
+Parameter: Header User-Agent
+Evidence: 
+Description: Check for differences in response based on fuzzed User Agent (eg. mobile sites, access as a Search Engine Crawler). Compares the response statuscode and the hashcode of the response body with the original response.
+Solution: 
+--------------------------------------------------
+Alert ID: 71
+Alert Name: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://host.docker.internal:5000/
+Method: GET
+Parameter: Header User-Agent
+Evidence: 
+Description: Check for differences in response based on fuzzed User Agent (eg. mobile sites, access as a Search Engine Crawler). Compares the response statuscode and the hashcode of the response body with the original response.
+Solution: 
+--------------------------------------------------
+Alert ID: 72
+Alert Name: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://host.docker.internal:5000
+Method: GET
+Parameter: Header User-Agent
+Evidence: 
+Description: Check for differences in response based on fuzzed User Agent (eg. mobile sites, access as a Search Engine Crawler). Compares the response statuscode and the hashcode of the response body with the original response.
+Solution: 
+--------------------------------------------------
+Alert ID: 73
+Alert Name: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://host.docker.internal:5000/
+Method: POST
+Parameter: Header User-Agent
+Evidence: 
+Description: Check for differences in response based on fuzzed User Agent (eg. mobile sites, access as a Search Engine Crawler). Compares the response statuscode and the hashcode of the response body with the original response.
+Solution: 
+--------------------------------------------------
+Alert ID: 74
+Alert Name: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://host.docker.internal:5000/
+Method: GET
+Parameter: Header User-Agent
+Evidence: 
+Description: Check for differences in response based on fuzzed User Agent (eg. mobile sites, access as a Search Engine Crawler). Compares the response statuscode and the hashcode of the response body with the original response.
+Solution: 
+--------------------------------------------------
+Alert ID: 75
+Alert Name: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://host.docker.internal:5000
+Method: GET
+Parameter: Header User-Agent
+Evidence: 
+Description: Check for differences in response based on fuzzed User Agent (eg. mobile sites, access as a Search Engine Crawler). Compares the response statuscode and the hashcode of the response body with the original response.
+Solution: 
+--------------------------------------------------
+Alert ID: 76
+Alert Name: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://host.docker.internal:5000/
+Method: POST
+Parameter: Header User-Agent
+Evidence: 
+Description: Check for differences in response based on fuzzed User Agent (eg. mobile sites, access as a Search Engine Crawler). Compares the response statuscode and the hashcode of the response body with the original response.
+Solution: 
+--------------------------------------------------
+Alert ID: 77
+Alert Name: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://host.docker.internal:5000/
+Method: GET
+Parameter: Header User-Agent
+Evidence: 
+Description: Check for differences in response based on fuzzed User Agent (eg. mobile sites, access as a Search Engine Crawler). Compares the response statuscode and the hashcode of the response body with the original response.
+Solution: 
+--------------------------------------------------
+Alert ID: 78
+Alert Name: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://host.docker.internal:5000
+Method: GET
+Parameter: Header User-Agent
+Evidence: 
+Description: Check for differences in response based on fuzzed User Agent (eg. mobile sites, access as a Search Engine Crawler). Compares the response statuscode and the hashcode of the response body with the original response.
+Solution: 
+--------------------------------------------------
+Alert ID: 79
+Alert Name: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://host.docker.internal:5000/
+Method: POST
+Parameter: Header User-Agent
+Evidence: 
+Description: Check for differences in response based on fuzzed User Agent (eg. mobile sites, access as a Search Engine Crawler). Compares the response statuscode and the hashcode of the response body with the original response.
+Solution: 
+--------------------------------------------------
+Alert ID: 80
+Alert Name: User Agent Fuzzer
+Risk Level: Informational
+Confidence: Medium
+URL: http://host.docker.internal:5000/
+Method: GET
+Parameter: Header User-Agent
+Evidence: 
+Description: Check for differences in response based on fuzzed User Agent (eg. mobile sites, access as a Search Engine Crawler). Compares the response statuscode and the hashcode of the response body with the original response.
+Solution: 
+--------------------------------------------------
