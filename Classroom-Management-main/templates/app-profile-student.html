@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Webstrot Admin : Profile</title>
+
+    <!-- ================= Favicon ================== -->
+    <!-- Standard -->
+    <link rel="shortcut icon" href="http://placehold.it/64.png/000/fff">
+    <!-- Retina iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="144x144" href="http://placehold.it/144.png/000/fff">
+    <!-- Retina iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="114x114" href="http://placehold.it/114.png/000/fff">
+    <!-- Standard iPad Touch Icon-->
+    <link rel="apple-touch-icon" sizes="72x72" href="http://placehold.it/72.png/000/fff">
+    <!-- Standard iPhone Touch Icon-->
+    <link rel="apple-touch-icon" sizes="57x57" href="http://placehold.it/57.png/000/fff">
+
+    <!-- Styles -->
+     <link href="{{ url_for("static",filename="assets/css/lib/font-awesome.min.css")}}" rel="stylesheet">
+    <link href="{{ url_for("static",filename="assets/css/lib/themify-icons.css")}}" rel="stylesheet">
+    <link href="{{ url_for("static",filename="assets/css/lib/bootstrap.min.css")}}" rel="stylesheet">
+    <link href="{{ url_for("static",filename="assets/css/lib/unix.css")}}" rel="stylesheet">
+    <link href="{{ url_for("static",filename="assets/css/style.css")}}" rel="stylesheet">
+     <link href="{{ url_for("static",filename="assets/css/lib/menubar/sidebar.css")}}" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
+        <div class="nano">
+            <div class="nano-content">
+                <ul>
+                    <li class="label">Main</li>
+                    <li class="active"><a class="sidebar-sub-toggle"><i class="ti-home"></i> Dashboard <span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="index.html">Dashboard 1</a></li>
+                            <li><a href="index-v1.html">Dashboard 2</a></li>
+                            <li><a href="index-v2.html">Dashboard 3</a></li>
+                        </ul>
+                    </li>
+
+
+{#                    <li><a href="app-event-calender.html"><i class="ti-calendar"></i> Calender </a></li>#}
+{#                    <li><a href="app-email.html"><i class="ti-email"></i> Email</a></li>#}
+{#                    <li><a href="app-profile.html"><i class="ti-user"></i> Profile</a></li>#}
+{#                    <li><a href="app-widget-card.html"><i class="ti-layout-grid2-alt"></i> Widget</a></li>#}
+{#                    <li class="label">Features</li>#}
+
+
+                    <li><a class="sidebar-sub-toggle"><i class="ti-layout-grid4-alt"></i> Data Analysis sytem <span class="sidebar-collapse-icon ti-angle-down"></span></a>
+                        <ul>
+                            <li><a href="{{ url_for("course_page.course_list")}}">Myinfos</a></li>
+                        </ul>
+                    </li>
+
+
+                    <li href="{{ url_for("index_page.logout")}}"><a><i class="ti-close" href="{{ url_for("index_page.logout")}}"></i> Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /# sidebar -->
+    <div class="header">
+        <div class="pull-left">
+            <div class="logo"><a href="index.html"><!-- <img src="assets/images/logo.png" alt="" /> --><span>Webstrot Admin</span></a></div>
+            <div class="hamburger sidebar-toggle">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+        </div>
+
+        <div class="pull-right p-r-15">
+            <ul>
+
+                <li class="header-icon dib"><img class="avatar-img" src="assets/images/avatar/1.jpg" alt="" /> <span class="user-avatar"> {{ user.username }} <i class="ti-angle-down f-s-10"></i></span>
+                    <div class="drop-down dropdown-profile">
+
+                        <div class="dropdown-content-body">
+                            <ul>
+
+                                <li><a href="{{ url_for("index_page.logout")}}"><i class="ti-power-off"></i> <span>Logout</span></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="content-wrap">
+        <div class="main">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-8 p-r-0 title-margin-right">
+                        <div class="page-header">
+                            <div class="page-title">
+                                <h1>Dashboard</h1>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /# column -->
+                    <div class="col-lg-4 p-l-0 title-margin-left">
+                        <div class="page-header">
+                            <div class="page-title">
+                                <ol class="breadcrumb text-right">
+                                    <li><a href="#">Dashboard</a></li>
+                                    <li class="active">App-Profile</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /# column -->
+                </div>
+                <!-- /# row -->
+                <div id="main-content">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="card alert">
+                                <div class="card-body">
+                                    <div class="user-profile">
+                                        <div class="row">
+                                            <div class="col-lg-4">
+{#                                                <div class="user-photo m-b-30">#}
+{#                                                    <img class="img-responsive" src="assets/images/user-profile.jpg" alt="" />#}
+{#                                                </div>#}
+{#                                                <div class="user-work">#}
+{#                                                    <h4>work</h4>#}
+{#                                                    <div class="work-content">#}
+{#                                                        <h3>HTML Cooker Bangladesh </h3>#}
+{#                                                        <p>123, South Mugda</p>#}
+{#                                                        <p>Dhaka, 1214</p>#}
+{#                                                    </div>#}
+{#                                                    <div class="work-content">#}
+{#                                                        <h3>Unix Bangladesh</h3>#}
+{#                                                        <p>123, South Mugda</p>#}
+{#                                                        <p>Dhaka, 1214</p>#}
+{#                                                    </div>#}
+{#                                                </div>#}
+{#                                                <div class="user-skill">#}
+{#                                                    <h4>Skill</h4>#}
+{#                                                    <ul>#}
+{#                                                        <li><a href="#">Branding</a></li>#}
+{#                                                        <li><a href="#">UI/UX</a></li>#}
+{#                                                        <li><a href="#">Web Design</a></li>#}
+{#                                                        <li><a href="#">Wordpress</a></li>#}
+{#                                                        <li><a href="#">Magento</a></li>#}
+{#                                                    </ul>#}
+{#                                                </div>#}
+                                            </div>
+                                            <div class="col-lg-8">
+
+{#                                                <div class="user-send-message"><button class="btn btn-primary btn-addon" type="button"><i class="ti-email"></i>Send Message</button></div>#}
+                                                <div class="custom-tab user-profile-tab">
+                                                    <ul class="nav nav-tabs" role="tablist">
+                                                        <li role="presentation" class="active"><a href="#1" aria-controls="1" role="tab" data-toggle="tab">About</a></li>
+                                                    </ul>
+                                                    <div class="tab-content">
+                                                        <div role="tabpanel" class="tab-pane active" id="1">
+                                                            <div class="contact-information">
+                                                                <h4>User information</h4>
+                                                                <div class="phone-content">
+                                                                    <span class="contact-title">username </span>
+                                                                    <span class="phone-number">{{ user.username }}</span>
+                                                                </div>
+                                                                <div class="address-content">
+                                                                    <span class="contact-title">Role</span>
+                                                                    <span class="mail-address">{{ user.role }}</span>
+                                                                </div>
+
+{#                                                                <div class="skype-content">#}
+{#                                                                    <span class="contact-title">Action:</span>#}
+{#                                                                    <a href="{{ url_for("user_page.deletedb")}}" class="btn btn-primary">Reset Database</a>#}
+{#                                                                </div>#}
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /# column -->
+
+                        <!-- /# column -->
+                    </div>
+                    <!-- /# row -->
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <div id="search">
+        <button type="button" class="close">×</button>
+        <form>
+            <input type="search" value="" placeholder="type keyword(s) here" />
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+    <!-- jquery vendor -->
+
+    <script src="{{ url_for("static",filename="assets/js/lib/jquery.min.js")}}"></script>
+    <script src="{{ url_for("static",filename="assets/js/lib/jquery.nanoscroller.min.js")}}"></script>
+    <script src="{{ url_for("static",filename="assets/js/lib/menubar/sidebar.js")}}"></script>
+    <script src="{{ url_for("static",filename="assets/js/lib/preloader/pace.min.js")}}"></script>
+    <script src="{{ url_for("static",filename="assets/js/lib/bootstrap.min.js")}}"></script>
+    <script src="{{ url_for("static",filename="assets/js/scripts.js")}}"></script>
+{#    <script src="assets/js/lib/jquery.nanoscroller.min.js"></script>#}
+    <!-- nano scroller -->
+{#    <script src="assets/js/lib/menubar/sidebar.js"></script>#}
+{#    <script src="assets/js/lib/preloader/pace.min.js"></script>#}
+    <!-- sidebar -->
+{#    <script src="assets/js/lib/bootstrap.min.js"></script>#}
+    <!-- bootstrap -->
+
+
+{#    <script src="assets/js/scripts.js"></script>#}
+    <!-- scripit init-->
+
+
+
+
+
+</body>
+
+</html>

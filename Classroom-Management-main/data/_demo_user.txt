@@ -1,0 +1,12 @@
+285108;;;aaaaa;;;1234;;;2021-11-29 32:32:28.590;;;admin
+215179906;;;clayton_carpenter;;;&&25&&&&15&&&&55&&&&15&&&&75&&&&95&&&&95&&&&5&&&&65&&;;;xxxx-xx-xx_xx:xx:xx.xxx;;;instructor;;;clayton_carpenter@udemy.com;;;Clayton Carpenter;;;Chartered Accountant;;;295732224--296168527--219613520--843968368--115697606
+650882333;;;muhammad_harrell;;;&&65&&&&55&&&&5&&&&85&&&&85&&&&25&&&&35&&&&35&&&&35&&;;;xxxx-xx-xx_xx:xx:xx.xxx;;;instructor;;;muhammad_harrell@udemy.com;;;Muhammad Harrell;;;Condensed and Efficient Courses for Busy Professionals;;;283317119--720381378--536397449--175276033--949269070--875569996--717675524
+863133505;;;brooks_davila;;;&&85&&&&65&&&&35&&&&15&&&&35&&&&35&&&&55&&&&5&&&&55&&;;;xxxx-xx-xx_xx:xx:xx.xxx;;;instructor;;;brooks_davila@udemy.com;;;Brooks Davila;;;Management trainer;;;39385047--112007285--582468331--204107886--970798161--798836200--662704084--378659188
+523938;;;student;;;&&15&&&&25&&&&35&&&&45&&&&55&&&&65&&&&75&&&&85&&;;;2022-4-30_18:45:6.909;;;student;;;student@gmail.com
+5767686764;;;dzaazd;;;azdad;;;admin;;;finder116@gmail.com
+3395541802;;;klochk;;;1234;;;<built-in method now of type object at 0x00007FF83CF705B0>;;;admin;;;kloch@gmail.com
+5583101392;;;admin123;;;admin123;;;<built-in method now of type object at 0x00007FF83CF705B0>;;;admin;;;admin123@live.be
+1069096562;;;hello;;;hello;;;05/28/2022, 10:30:36;;;admin;;;hi@li.nrt
+2679982926;;;hh;;;hh;;;05-28-2022_10:31:52;;;admin;;;123456@ll.net
+271548251;;;Santino Dyer;;;271548251;;;xxxx-xx-xx_xx:xx:xx.xxx;;;instructor;;;646010558-750425525-561683358-108643994-349904232-216868706-391581474-918232076-172551438-230357014-303864024-513227026-
+
